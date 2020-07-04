@@ -1,13 +1,15 @@
 package pageSteps;
 
 import io.cucumber.java.en.When;
-import utils.DriverSettings;
 
-public class MainPageSteps {
-	@When("Перейти на сайт {string}")
-	public void goToPage(String page) {
-		DriverSettings.getDriver().get(page);
+public class ProjectPageSteps {
+
+	@When("Проверить, что отображается текст {string}")
+	public void проверить_что_отображается_текст(String string) {
+		// Write code here that turns the phrase above into concrete actions
+		throw new io.cucumber.java.PendingException();
 	}
+
 	@When("Проверить что в футере отображается текст {string}")
 	public void проверить_что_в_футере_отображается_текст(String string) {
 		// Write code here that turns the phrase above into concrete actions
@@ -19,6 +21,4 @@ public class MainPageSteps {
 		// Write code here that turns the phrase above into concrete actions
 		throw new io.cucumber.java.PendingException();
 	}
-
-
 }
