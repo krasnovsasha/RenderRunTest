@@ -10,11 +10,11 @@ public class GalleryProjectsPageSteps {
 		throw new io.cucumber.java.PendingException();
 	}
 
-	@When("Проверить что в футере отображается текст {string}")
-	public void проверить_что_в_футере_отображается_текст(String string) {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
-	}
+//	@When("Проверить что в футере отображается текст {string}")
+//	public void проверить_что_в_футере_отображается_текст(String string) {
+//		// Write code here that turns the phrase above into concrete actions
+//		throw new io.cucumber.java.PendingException();
+//	}
 
 	@When("Кликнуть на любое изображение")
 	public void кликнуть_на_любое_изображение() {
