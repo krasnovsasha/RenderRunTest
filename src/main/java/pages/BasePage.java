@@ -20,6 +20,11 @@ public class BasePage {
 		waitUntilElementToBeVisible(element);
 		return element.getText();
 	}
+
+	protected void click(WebElement element){
+		DriverSettings.getWait().until(ExpectedConditions.elementToBeClickable(element)).click();
+	}
+
 	protected static void waitUntilElementToBeVisible(WebElement element) {
 		fluentWait = new FluentWait<>(DriverSettings.getDriver())
 				.withTimeout(Duration.ofMillis(25000))

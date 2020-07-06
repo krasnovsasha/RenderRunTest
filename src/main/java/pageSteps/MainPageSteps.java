@@ -1,15 +1,15 @@
 package pageSteps;
 
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-import org.openqa.selenium.WebElement;
 import pages.FooterPage;
+import pages.HeaderPage;
 import pages.MainPage;
 import utils.DriverSettings;
 
 public class MainPageSteps {
 	MainPage mp = new MainPage();
 	FooterPage fp = new FooterPage();
+	HeaderPage hp = new HeaderPage();
 	@When("Перейти на сайт {string}")
 	public void goToPage(String page) {
 		DriverSettings.getDriver().get(page);
@@ -21,8 +21,7 @@ public class MainPageSteps {
 
 	@When("Кликнуть по ссылке {string}")
 	public void кликнуть_по_ссылке(String string) {
-		// Write code here that turns the phrase above into concrete actions
-		throw new io.cucumber.java.PendingException();
+		hp.clickToMenuLink(string);
 	}
 
 
