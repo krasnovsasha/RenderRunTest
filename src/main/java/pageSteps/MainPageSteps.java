@@ -7,7 +7,6 @@ import pages.MainPage;
 import utils.DriverSettings;
 
 public class MainPageSteps {
-	MainPage mp = new MainPage();
 	FooterPage fp = new FooterPage();
 	HeaderPage hp = new HeaderPage();
 	@When("Перейти на сайт {string}")
@@ -23,6 +22,4 @@ public class MainPageSteps {
 	public void кликнуть_по_ссылке(String string) {
 		hp.clickToMenuLink(string);
 	}
-
-
 }

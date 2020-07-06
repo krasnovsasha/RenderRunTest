@@ -1,21 +1,17 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-
-import java.util.ArrayList;
-import java.util.List;
+import utils.DriverSettings;
 
 public class HeaderPage extends BasePage {
-	@FindBy(xpath = "//div[@class='headerMenu']/ul/li/a")
-	public List<WebElement> headerMenuLinks;
+
 
 	public void clickToMenuLink(String linkText){
-		headerMenuLinks = new ArrayList<>();
-		for (WebElement el: headerMenuLinks) {
-			if (el.getText().equals(linkText)) {
-				click(el);
-			}
-		}
+		String xpath = String.format("//a[contains(text(),'%s')]",linkText);
+		WebElement element = DriverSettings.getDriver().findElement(By.xpath(xpath));
+		waitUntillElementToBeClickable(element);
+		element.click();
 	}
+
 }

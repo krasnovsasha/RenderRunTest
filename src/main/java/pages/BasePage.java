@@ -13,27 +13,33 @@ import java.time.Duration;
 
 public class BasePage {
 	private static FluentWait<WebDriver> fluentWait;
+
 	public BasePage() {
 		PageFactory.initElements(DriverSettings.getDriver(), this);
 	}
-	protected String getTextElement(WebElement element){
+
+	protected String getTextElement(WebElement element) {
 		waitUntilElementToBeVisible(element);
 		return element.getText();
 	}
 
-	protected void click(WebElement element){
-		DriverSettings.getWait().until(ExpectedConditions.elementToBeClickable(element)).click();
+	protected void click(WebElement element) {
+		waitUntillElementToBeClickable(element);
+		element.click();
 	}
 
 	protected static void waitUntilElementToBeVisible(WebElement element) {
-		fluentWait = new FluentWait<>(DriverSettings.getDriver())
-				.withTimeout(Duration.ofMillis(25000))
-				.pollingEvery(Duration.ofMillis(500))
-				.ignoring(NoSuchElementException.class);
+		fluentWait = new FluentWait<>(DriverSettings.getDriver()).withTimeout(Duration.ofMillis(25000)).pollingEvery(Duration.ofMillis(500)).ignoring(NoSuchElementException.class);
 		fluentWait.until(ExpectedConditions.visibilityOf(element));
 	}
-	protected void assertText(WebElement element,String text){
+
+	public static void waitUntillElementToBeClickable(WebElement Element) {
+		fluentWait = new FluentWait<>(DriverSettings.getDriver()).withTimeout(Duration.ofMillis(25000)).pollingEvery(Duration.ofMillis(500)).ignoring(NoSuchElementException.class);
+		fluentWait.until(ExpectedConditions.elementToBeClickable(Element));
+	}
+
+	protected void assertText(WebElement element, String text) {
 		String textInElement = getTextElement(element);
-		Assert.assertTrue("Элемент " + element.getTagName() + " не содержит текст " + text,textInElement.contains(text));
+		Assert.assertTrue("Элемент " + element.getTagName() + " не содержит текст " + text, textInElement.contains(text));
 	}
 }
