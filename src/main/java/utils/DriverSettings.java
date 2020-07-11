@@ -59,9 +59,10 @@ public class DriverSettings {
 				switch (browserName) {
 					case "chrome":
 						System.setProperty(properties.getProperty("driverChrome"), properties.getProperty("pathToDriverChromeWin"));
-						ChromeOptions option = new ChromeOptions();
-						option.setHeadless(true);
-						driver = new ChromeDriver(option);
+//						ChromeOptions option = new ChromeOptions();
+//						option.setHeadless(true);
+//						driver = new ChromeDriver(option);
+						driver = new ChromeDriver();
 						break;
 					case "firefox":
 						System.setProperty(properties.getProperty("driverFirefox"), properties.getProperty("pathToDriverFirefoxWin"));
