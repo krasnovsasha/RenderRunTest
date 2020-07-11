@@ -13,6 +13,6 @@ public class GalleryProjectsPageSteps {
 
 	@When("Кликнуть на любое изображение")
 	public void кликнуть_на_любое_изображение() {
-
+		gp.clickToRandomImg();
 	}
 }
