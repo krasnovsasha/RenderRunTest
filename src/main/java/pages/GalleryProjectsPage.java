@@ -13,6 +13,8 @@ import java.util.Random;
 public class GalleryProjectsPage extends BasePage {
     @FindBy(xpath = "//div[@class='wrapperProjects']/a/img")
     protected List<WebElement> projectsList;
+    @FindBy(xpath = "//h5")
+    protected WebElement textImg;
 
     public void checkProjectsCount(String count) {
         int projectsCount = Integer.parseInt(count);
@@ -24,5 +26,9 @@ public class GalleryProjectsPage extends BasePage {
         int projectsCount = projectsList.size();
         Random random = new Random();
         click(projectsList.get(random.nextInt(projectsCount)));
+    }
+    public void checkTextOnImg(String text){
+        String textOnImg = getTextElement(textImg);
+        Assert.assertEquals("Текст на изображении не совпадает с ожидаемым",text,textOnImg);
     }
 }

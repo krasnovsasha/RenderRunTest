@@ -15,4 +15,10 @@ public class GalleryProjectsPageSteps {
 	public void кликнуть_на_любое_изображение() {
 		gp.clickToRandomImg();
 	}
+
+	@When("Проверить, что отображается текст {string}")
+	public void проверить_что_отображается_текст(String string) {
+		gp.checkTextOnImg(string);
+	}
+
 }
