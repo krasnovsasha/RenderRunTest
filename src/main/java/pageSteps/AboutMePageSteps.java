@@ -11,10 +11,4 @@ public class AboutMePageSteps {
 		ap.checkText(string);
 	}
 
-//	@When("Кликнуть по ссылке {string}")
-//	public void кликнуть_по_ссылке(String string) {
-//		// Write code here that turns the phrase above into concrete actions
-//		throw new io.cucumber.java.PendingException();
-//	}
-
 }
