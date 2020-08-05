@@ -12,7 +12,7 @@ public class ContactsPage extends BasePage {
 	private WebElement userEmail;
 	@FindBy(xpath = "//input[@id='phoneNumber']")
 	private WebElement userPhone;
-	@FindBy(xpath = "//input[@id='question']")
+	@FindBy(xpath = "//textarea[@id='question']")
 	private WebElement userQuestion;
 	@FindBy(xpath = "//input[@type='submit']")
 	private WebElement submit;
