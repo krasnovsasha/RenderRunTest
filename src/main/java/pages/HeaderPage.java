@@ -12,5 +12,4 @@ public class HeaderPage extends BasePage {
 		waitUntillElementToBeClickable(element);
 		element.click();
 	}
-
 }

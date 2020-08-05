@@ -3,7 +3,6 @@ package pageSteps;
 import io.cucumber.java.en.When;
 import pages.FooterPage;
 import pages.HeaderPage;
-import pages.MainPage;
 import utils.DriverSettings;
 
 public class MainPageSteps {
